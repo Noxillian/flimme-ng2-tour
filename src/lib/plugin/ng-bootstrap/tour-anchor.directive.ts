@@ -51,6 +51,11 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
   public showTourStep(step: IStepOption): void {
     this.ngbPopover = this.tourStepTemplate.template;
     this.popoverTitle = step.title;
+
+    /**
+     * placement switch
+     */
+
     switch (step.placement) {
       case 'above':
         this.placement = 'top';
@@ -73,7 +78,11 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
     if (!step.preventScrolling) {
       scrollIntoViewIfNeeded(this.element.nativeElement, true);
     }
-    console.log("display-type: ", step.display );
+
+    /**
+     * display switch
+     */
+
     switch (step.display) {
       case 'highlight':
         this.element.nativeElement.style.boxShadow = "2px 2px 10px 10px pink";
@@ -81,17 +90,15 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
       case 'mask':
         this.create_masks();
         break;
+      case 'underline':
+        this.element.nativeElement.style.textDecoration = "underline";
+        break;
     }
 
     /**
-     * Adds the glow
+     *  arrow
      */
-    // this.element.nativeElement.style.boxShadow = "2px 2px 10px 10px pink";
-
-    /**
-     * Creates the black masks
-     */
-    // this.create_masks();
+    this.create_arrow(step.arrow);
 
   }
 
@@ -99,6 +106,23 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
     this.destroy_masks()
     this.element.nativeElement.style = this.oldstyle;
     this.close();
+  }
+
+  private create_arrow(direction: String): void{
+
+    switch (direction) {
+      case 'top':
+        break;
+      case 'left':
+        break;
+      case 'right':
+        break;
+      case 'bottom':
+        break;
+      default:
+        console.log("no arrow");
+        break;
+    }
   }
 
   private destroy_masks(): void {

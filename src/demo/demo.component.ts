@@ -27,6 +27,7 @@ export class DemoComponent {
       anchorId: 'usage',
       content: '...then use it.',
       title: 'Usage',
+      display: 'underline',
     }, {
       anchorId: 'tourService.start',
       content: 'Don\'t forget to actual start the tour.',

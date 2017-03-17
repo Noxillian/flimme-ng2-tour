@@ -18,7 +18,8 @@ export interface IStepOption {
   prevStep?: number | string;
   placement?: 'above' | 'below' | 'after' | 'before' | 'left' | 'right';
   preventScrolling?: boolean;
-  display?: 'highlight' | 'mask';
+  display?: 'highlight' | 'mask' | 'underline';
+  arrow?: 'top' | 'left' | 'right' | 'bottom';
 }
 
 export enum TourState {
