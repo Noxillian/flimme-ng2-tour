@@ -151,9 +151,15 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
     this.mask_top.style.background = "rgba(0,0,0,0.75)";
     this.mask_top.style.position = "absolute";
 
+    var body = document.body,
+        html = document.documentElement;
+
+    var bottomheight = Math.max( body.scrollHeight, body.offsetHeight,
+        html.clientHeight, html.scrollHeight, html.offsetHeight );
+
     this.mask_bottom = document.createElement("div");
     this.mask_bottom.style.width = "100vw";
-    this.mask_bottom.style.height = "100vh";
+    this.mask_bottom.style.height = bottomheight + "px";//"100vh";
     this.mask_bottom.style.top = rect.bottom + "px";
     this.mask_bottom.style.left = "0";
     this.mask_bottom.style.background = "rgba(0,0,0,0.75)";
