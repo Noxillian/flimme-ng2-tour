@@ -25,6 +25,10 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
   @Input() public tourAnchor: string;
   private element: ElementRef;
   private oldstyle: any;
+  private mask_top: any;
+  private mask_bottom: any;
+  private mask_left: any;
+  private mask_right: any;
 
   constructor(
     private tourService: TourService, private tourStepTemplate: TourStepTemplateService, _elementRef: ElementRef, _renderer: Renderer,
@@ -69,43 +73,92 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
     if (!step.preventScrolling) {
       scrollIntoViewIfNeeded(this.element.nativeElement, true);
     }
+    console.log("display-type: ", step.display );
+    switch (step.display) {
+      case 'highlight':
+        this.element.nativeElement.style.boxShadow = "2px 2px 10px 10px pink";
+        break;
+      case 'mask':
+        this.create_masks();
+        break;
+    }
 
     /**
-     * Element Changing test
+     * Adds the glow
      */
+    // this.element.nativeElement.style.boxShadow = "2px 2px 10px 10px pink";
 
-    //console.log("test: " + this.element.nativeElement.style.backgroundColor);
-    this.element.nativeElement.style.boxShadow = "2px 2px 10px 10px pink";
-    // box-shadow: 0px 0px 5px gray;
-    // document.getElementById("body").style.backgroundColor = 'black';
-    // document.body.style.backgroundColor = 'black';
-    // let test = this.element.nativeElement.style;
-
-
-    // var div = document.createElement("div");
-    // div.style.width = "100px";
-    // div.style.height = "100px";
-    // div.style.background = "red";
-    // div.style.color = "white";
-    // div.innerHTML = "Hello";
-    //
-    // document.getElementById("main").appendChild(div);
-
-    // console.log("t01_step: ", step);
-    // console.log("t01_anchor: " + this.tourAnchor);
-    // console.log("t02_nativeElement: ", this.element.nativeElement);
-    // let elem: HTMLElement = document.getElementById("test");
-    // if (elem === null){
-    //   console.log("t01_message: no element?");
-    // }else{
-    //   console.log("t01_innerHtml: ", elem.innerHTML);
-    //   console.log("t01_classname: " + elem.className);
-    // }
+    /**
+     * Creates the black masks
+     */
+    // this.create_masks();
 
   }
 
   public hideTourStep(): void {
+    this.destroy_masks()
     this.element.nativeElement.style = this.oldstyle;
     this.close();
   }
+
+  private destroy_masks(): void {
+    if (this.mask_top != null){
+      document.body.removeChild(this.mask_top);
+    }
+    if (this.mask_bottom != null){
+      document.body.removeChild(this.mask_bottom);
+    }
+    if (this.mask_left != null){
+      document.body.removeChild(this.mask_left);
+    }
+    if (this.mask_right != null){
+      document.body.removeChild(this.mask_right);
+    }
+  }
+
+  private create_masks(): void {
+    const rect = this.element.nativeElement.getBoundingClientRect();
+
+    this.mask_top = document.createElement("div");
+    this.mask_top.style.width = "100vw";
+    this.mask_top.style.height = rect.top + "px";
+    this.mask_top.style.top = "0";
+    this.mask_top.style.left = "0";
+    this.mask_top.style.background = "rgba(0,0,0,0.75)";
+    this.mask_top.style.position = "absolute";
+
+    this.mask_bottom = document.createElement("div");
+    this.mask_bottom.style.width = "100vw";
+    this.mask_bottom.style.height = "100vh";
+    this.mask_bottom.style.top = rect.bottom + "px";
+    this.mask_bottom.style.left = "0";
+    this.mask_bottom.style.background = "rgba(0,0,0,0.75)";
+    this.mask_bottom.style.position = "absolute";
+
+    this.mask_left = document.createElement("div");
+    this.mask_left.style.width = rect.left + "px";
+    this.mask_left.style.height = (rect.bottom - rect.top) + "px";
+    this.mask_left.style.top = rect.top + "px";
+    this.mask_left.style.left = "0";
+    this.mask_left.style.background = "rgba(0,0,0,0.75)";
+    this.mask_left.style.position = "absolute";
+
+    this.mask_right = document.createElement("div");
+    this.mask_right.style.width = "100vw";
+    this.mask_right.style.height = (rect.bottom - rect.top) + "px";
+    this.mask_right.style.top = rect.top + "px";
+    this.mask_right.style.left = rect.right + "px";
+    this.mask_right.style.background = "rgba(0,0,0,0.75)";
+    this.mask_right.style.position = "absolute";
+
+    /**
+     * Add masks to document
+     */
+    document.body.appendChild(this.mask_top);
+    document.body.appendChild(this.mask_bottom);
+    document.body.appendChild(this.mask_left);
+    document.body.appendChild(this.mask_right);
+  }
+
 }
+

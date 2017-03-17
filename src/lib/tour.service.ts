@@ -1,6 +1,6 @@
 import { Hotkey, HotkeysService } from 'angular2-hotkeys';
 import { TourAnchorDirective } from './tour-anchor.directive';
-import { IStepOption } from './tour.service';
+// import { IStepOption } from './tour.service';
 import { Injectable } from '@angular/core';
 import { Router, UrlSegment } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
@@ -18,6 +18,7 @@ export interface IStepOption {
   prevStep?: number | string;
   placement?: 'above' | 'below' | 'after' | 'before' | 'left' | 'right';
   preventScrolling?: boolean;
+  display?: 'highlight' | 'mask';
 }
 
 export enum TourState {

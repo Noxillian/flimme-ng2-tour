@@ -17,10 +17,12 @@ export class DemoComponent {
       content: 'Thanks to angular-ui-tour for the inspiration for the library',
       route: '',
       title: 'angular-ui-tour',
+      display: 'highlight',
     }, {
       anchorId: 'installation',
       content: 'First, install the library...',
       title: 'Installation',
+      display: 'mask',
     }, {
       anchorId: 'usage',
       content: '...then use it.',
