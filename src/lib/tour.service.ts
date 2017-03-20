@@ -1,4 +1,4 @@
-import { Hotkey, HotkeysService } from 'angular2-hotkeys';
+// import { Hotkey, HotkeysService } from 'angular2-hotkeys';
 import { TourAnchorDirective } from './tour-anchor.directive';
 // import { IStepOption } from './tour.service';
 import { Injectable } from '@angular/core';
@@ -57,31 +57,32 @@ export class TourService {
 
   public anchors: { [anchorId: string]: TourAnchorDirective } = {};
   private status: TourState = TourState.OFF;
-  private hotkeys: Hotkey[] = [new Hotkey(
-    'esc',
-    event => {
-      this.end();
-      return true;
-    },
-  ), new Hotkey(
-    'right',
-    event => {
-      if (this.hasNext(this.currentStep)) {
-        this.next();
-      }
-      return true;
-    },
-  ), new Hotkey(
-    'left',
-    event => {
-      if (this.hasPrev(this.currentStep)) {
-        this.prev();
-      }
-      return true;
-    },
-  )];
+  // private hotkeys: Hotkey[] = [new Hotkey(
+  //   'esc',
+  //   event => {
+  //     this.end();
+  //     return true;
+  //   },
+  // ), new Hotkey(
+  //   'right',
+  //   event => {
+  //     if (this.hasNext(this.currentStep)) {
+  //       this.next();
+  //     }
+  //     return true;
+  //   },
+  // ), new Hotkey(
+  //   'left',
+  //   event => {
+  //     if (this.hasPrev(this.currentStep)) {
+  //       this.prev();
+  //     }
+  //     return true;
+  //   },
+  // )];
 
-  constructor(private router: Router, private hotkeyService: HotkeysService) { }
+  // constructor(private router: Router, private hotkeyService: HotkeysService) { }
+  constructor(private router: Router) { }
 
   public initialize(steps: IStepOption[], stepDefaults?: IStepOption): void {
     if (steps && steps.length > 0) {
@@ -99,7 +100,7 @@ export class TourService {
     this.goToStep(this.loadStep(stepId));
     this.start$.next();
     this.status = TourState.ON;
-    this.setHotkeys();
+    // this.setHotkeys();
   }
 
   public end(): void {
@@ -107,21 +108,21 @@ export class TourService {
     this.currentStep = undefined;
     this.end$.next();
     this.status = TourState.OFF;
-    this.removeHotkeys();
+    // this.removeHotkeys();
   }
 
   public pause(): void {
     this.hideStep(this.currentStep);
     this.pause$.next();
     this.status = TourState.PAUSED;
-    this.setHotkeys();
+    // this.setHotkeys();
   }
 
   public resume(): void {
     this.showStep(this.currentStep);
     this.resume$.next();
     this.status = TourState.ON;
-    this.removeHotkeys();
+    // this.removeHotkeys();
   }
 
   public toggle(pause?: boolean): void {
@@ -176,13 +177,13 @@ export class TourService {
   /**
    * Configures hot keys for controlling the tour with the keyboard
    */
-  private setHotkeys(): void {
-    this.hotkeyService.add(this.hotkeys);
-  }
-
-  private removeHotkeys(): void {
-    this.hotkeyService.remove(this.hotkeys);
-  }
+  // private setHotkeys(): void {
+  //   this.hotkeyService.add(this.hotkeys);
+  // }
+  //
+  // private removeHotkeys(): void {
+  //   this.hotkeyService.remove(this.hotkeys);
+  // }
 
   private goToStep(step: IStepOption): void {
     if (!step) {

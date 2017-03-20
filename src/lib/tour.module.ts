@@ -3,12 +3,13 @@ import { TourService } from './tour.service';
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HotkeyModule } from 'angular2-hotkeys';
+// import { HotkeyModule } from 'angular2-hotkeys';
 
 @NgModule({
     declarations: [],
-    exports: [HotkeyModule],
-    imports: [CommonModule, HotkeyModule, RouterModule],
+    // exports: [HotkeyModule],
+    // imports: [CommonModule, HotkeyModule, RouterModule],
+    imports: [CommonModule, RouterModule],
 })
 export class TourModule {
     public static forRoot(): ModuleWithProviders {
@@ -16,7 +17,7 @@ export class TourModule {
             ngModule: TourModule,
             providers: [
                 TourService,
-                ...HotkeyModule.forRoot().providers,
+                // ...HotkeyModule.forRoot().providers,
             ],
         };
     }

@@ -29,6 +29,7 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
   private mask_bottom: any;
   private mask_left: any;
   private mask_right: any;
+  private hasMask: boolean = false;
 
 
   constructor(
@@ -40,10 +41,18 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
     this.element = _elementRef;
     this.oldstyle = this.element.nativeElement.style;
 
-    /**
-    *     This seems to fix the width resizing bug
-    */
-    window.onresize = (e) => { ngZone.run(() => {}); };
+    /** This seems to fix the width resizing bug */
+    window.onresize = (e) => {
+      ngZone.run(() => {
+        console.log("mask: ", this.mask_top);
+        if ( this.hasMask === true ){
+          this.destroy_masks();
+          this.create_masks();
+        }else{
+           console.log("there is no mask ...");
+        }
+      });
+    };
 
   }
 
@@ -52,6 +61,9 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
   }
 
   public ngOnDestroy(): void {
+    // if (this.hasMask){
+    //   this.destroy_masks();
+    // }
     this.tourService.unregister(this.tourAnchor);
   }
 
@@ -60,9 +72,7 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
     this.ngbPopover = this.tourStepTemplate.template;
     this.popoverTitle = step.title;
 
-    /**
-     * placement switch
-     */
+    /** placement switch */
 
     switch (step.placement) {
       case 'above':
@@ -87,31 +97,27 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
       scrollIntoViewIfNeeded(this.element.nativeElement, true);
     }
 
-    /**
-     * display switch
-     */
-
+    /** display switch */
     switch (step.display) {
       case 'highlight':
-        this.element.nativeElement.style.boxShadow = "2px 2px 10px 10px pink";
+        this.element.nativeElement.style.boxShadow = "2px 2px 10px 10px rgba(255, 56, 93, 0.5)";
         break;
       case 'mask':
         this.create_masks();
+        this.hasMask = true;
         break;
       case 'underline':
         this.element.nativeElement.style.textDecoration = "underline";
         break;
     }
 
-    /**
-     *  arrow
-     */
+    /** arrow */
     this.create_arrow(step.arrow);
 
   }
 
   public hideTourStep(): void {
-    this.destroy_masks()
+    this.destroy_masks();
     this.element.nativeElement.style = this.oldstyle;
     this.close();
   }
@@ -189,9 +195,7 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
     this.mask_right.style.background = "rgba(0,0,0,0.75)";
     this.mask_right.style.position = "absolute";
 
-    /**
-     * Add masks to document
-     */
+    /** Add masks to document */
     document.body.appendChild(this.mask_top);
     document.body.appendChild(this.mask_bottom);
     document.body.appendChild(this.mask_left);
