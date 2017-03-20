@@ -30,6 +30,7 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
   private mask_left: any;
   private mask_right: any;
 
+
   constructor(
     private tourService: TourService, private tourStepTemplate: TourStepTemplateService, _elementRef: ElementRef, _renderer: Renderer,
     injector: Injector, componentFactoryResolver: ComponentFactoryResolver, viewContainerRef: ViewContainerRef, config: NgbPopoverConfig,
@@ -38,6 +39,12 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
     super(_elementRef, _renderer, injector, componentFactoryResolver, viewContainerRef, config, ngZone);
     this.element = _elementRef;
     this.oldstyle = this.element.nativeElement.style;
+
+    /**
+    *     This seems to fix the width resizing bug
+    */
+    window.onresize = (e) => { ngZone.run(() => {}); };
+
   }
 
   public ngOnInit(): void {
@@ -49,6 +56,7 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
   }
 
   public showTourStep(step: IStepOption): void {
+
     this.ngbPopover = this.tourStepTemplate.template;
     this.popoverTitle = step.title;
 
@@ -151,10 +159,10 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
     this.mask_top.style.background = "rgba(0,0,0,0.75)";
     this.mask_top.style.position = "absolute";
 
-    var body = document.body,
+    let body = document.body,
         html = document.documentElement;
 
-    var bottomheight = Math.max( body.scrollHeight, body.offsetHeight,
+    let bottomheight = Math.max( body.scrollHeight, body.offsetHeight,
         html.clientHeight, html.scrollHeight, html.offsetHeight );
 
     this.mask_bottom = document.createElement("div");
