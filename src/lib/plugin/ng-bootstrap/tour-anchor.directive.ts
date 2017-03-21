@@ -42,7 +42,7 @@ export class TourAnchorNgBootstrapDirective extends NgbPopover implements OnInit
     this.oldstyle = this.element.nativeElement.style;
 
     /** This seems to fix the width resizing bug */
-    window.onresize = (e) => {
+    window.onresize = () => {
       ngZone.run(() => {
         console.log("mask: ", this.mask_top);
         if ( this.hasMask === true ){
