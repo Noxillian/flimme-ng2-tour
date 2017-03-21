@@ -1,6 +1,6 @@
 {
   "name": "flimme-ng2-tour",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Product tour library built in Angular (2+)",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,12 @@
   "keywords": [
     "angular",
     "angular2",
-    "tour"
+    "tour",
+	"guide",
+	"intro",
+	"tutorial",
+	"walkthrough",
+	"ng2"
   ],
   "repository": {
     "type": "git",
@@ -33,19 +38,19 @@
     "name": "isaacplmann",
     "email": "isaacplmann@gmail.com"
   },
+  "contributors": [{
+	"name": "dustinleese"
+  }],
   "license": "ISC",
-  "peerDependencies": {
+  "dependencies": {
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.19",
     "@angular/common": "^2.4.5",
     "@angular/core": "^2.4.5",
     "@angular/router": "^3.4.5",
-    "angular2-hotkeys": "1.x.x",
     "core-js": "^2.4.1",
     "rxjs": "^5.0.0-rc.4",
     "scroll-into-view-if-needed": "^1.0.6",
     "zone.js": "^0.7.6"
-  },
-  "dependencies": {
-    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.19"
   },
   "devDependencies": {
     "@angular/common": "^2.4.5",
