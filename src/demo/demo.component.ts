@@ -27,7 +27,7 @@ export class DemoComponent {
       anchorId: 'usage',
       content: '...then use it.',
       title: 'Step 4: TheFourth with underline',
-      display: 'underline',
+      display: 'highlight',
     }, {
       anchorId: 'tourService.start',
       content: 'Don\'t forget to actual start the tour.',
@@ -48,14 +48,14 @@ export class DemoComponent {
       content: 'Like this!',
       route: 'other',
       title: 'Another Route',
-      display: 'mask',
+      display: 'highlight',
     }, {
       anchorId: 'config.route',
       content: 'And then back again.',
       placement: 'below',
       route: '',
       title: 'Route Return',
-      display: 'mask',
+      display: 'highlight',
     }, {
       anchorId: 'config.placement.default',
       content: 'Steps can be positioned around an anchor. You can even have multiple steps use the same anchor.',
@@ -83,6 +83,7 @@ export class DemoComponent {
       anchorId: 'events',
       content: 'You can subscribe to events',
       title: 'Events',
+      display: 'highlight',
     }]);
     this.tourService.start();
   }
