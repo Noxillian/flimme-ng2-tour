@@ -1,6 +1,6 @@
 'use strict';
-let path = require('path');
-let ngtools = require('@ngtools/webpack');
+var path = require('path');
+var ngtools = require('@ngtools/webpack');
 
 module.exports = {
   entry: require('./webpack/entry.aot'),

@@ -1,6 +1,6 @@
 'use strict';
-let path = require('path');
-let webpack = require('webpack');
+var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   entry: require('./webpack/entry'),

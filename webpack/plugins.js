@@ -1,9 +1,9 @@
 'use strict';
 
-let webpack = require('webpack');
-let CopyWebpackPlugin = require('copy-webpack-plugin');
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
-let path = require('path');
+var webpack = require('webpack');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path');
 
 module.exports = [
   new webpack.ProgressPlugin(),
