@@ -1,5 +1,5 @@
-// export { TourNgBootstrapModule } from './src/lib/plugin/ng-bootstrap/ng-bootstrap.module';
-// export { TourModule, TourService, TourConsoleModule } from './src/lib/tour.module';
+export * from './src/lib/plugin/ng-bootstrap/ng-bootstrap.module';
+export * from './src/lib/tour.module';
 
 import { NgModule }           from '@angular/core';
 import { BrowserModule }      from '@angular/platform-browser';
