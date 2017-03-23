@@ -8,24 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
 var core_1 = require('@angular/core');
-var tour_module_1 = require('../../tour.module');
-var tour_anchor_directive_1 = require('./tour-anchor.directive');
-exports.TourAnchorConsoleDirective = tour_anchor_directive_1.TourAnchorConsoleDirective;
-var common_1 = require('@angular/common');
-var TourConsoleModule = (function () {
-    function TourConsoleModule() {
+var OtherRouteComponent = (function () {
+    function OtherRouteComponent() {
     }
-    TourConsoleModule = __decorate([
-        core_1.NgModule({
-            declarations: [tour_anchor_directive_1.TourAnchorConsoleDirective],
-            exports: [tour_anchor_directive_1.TourAnchorConsoleDirective],
-            imports: [tour_module_1.TourModule, common_1.CommonModule, ng_bootstrap_1.NgbPopoverModule.forRoot()],
+    OtherRouteComponent = __decorate([
+        core_1.Component({
+            selector: 'other-route',
+            template: "<p>This is the <strong tourAnchor=\"another.route\">another</strong> route</p>",
         }), 
         __metadata('design:paramtypes', [])
-    ], TourConsoleModule);
-    return TourConsoleModule;
+    ], OtherRouteComponent);
+    return OtherRouteComponent;
 }());
-exports.TourConsoleModule = TourConsoleModule;
-//# sourceMappingURL=console.module.js.map
+exports.OtherRouteComponent = OtherRouteComponent;
+//# sourceMappingURL=other-route.component.js.map
