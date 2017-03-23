@@ -2,7 +2,7 @@
   "name": "flimme-ng2-tour",
   "version": "0.2.0",
   "description": "Product tour library built in Angular (2+)",
-  "main": "index.js",
+  "main": "starter.ts",
   "scripts": {
     "cleanup": "rimraf build dist src/**/*.ngfactory.ts src/**/*.shim.ts src/**/*.js src/**/*.js.map src/**/*.js src/**/*.d.ts src/**/*.ngsummary.json",
     "explorer": "source-map-explorer ./dist/bootstrap.bundle.js ./dist/bootstrap.bundle.js.map",
