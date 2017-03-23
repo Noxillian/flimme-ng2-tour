@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e1af8e4-a812-4200-9bee-6b6abf0c4e05" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.component.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.npmignore" afterPath="$PROJECT_DIR$/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js.map" afterPath="$PROJECT_DIR$/index.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/plugin/console/console.module.js" afterPath="$PROJECT_DIR$/src/lib/plugin/console/console.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/plugin/console/console.module.js.map" afterPath="$PROJECT_DIR$/src/lib/plugin/console/console.module.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/plugin/console/tour-anchor.directive.js" afterPath="$PROJECT_DIR$/src/lib/plugin/console/tour-anchor.directive.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/plugin/console/tour-anchor.directive.js.map" afterPath="$PROJECT_DIR$/src/lib/plugin/console/tour-anchor.directive.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/ng-bootstrap.module.js" afterPath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/ng-bootstrap.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/ng-bootstrap.module.js.map" afterPath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/ng-bootstrap.module.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-anchor.directive.js" afterPath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-anchor.directive.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-anchor.directive.js.map" afterPath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-anchor.directive.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.component.js" afterPath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.component.js.map" afterPath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.component.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.component.metadata.json" afterPath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.component.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.component.ts" afterPath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.service.js" afterPath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.service.js.map" afterPath="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.service.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/tour.module.js" afterPath="$PROJECT_DIR$/src/lib/tour.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/tour.module.js.map" afterPath="$PROJECT_DIR$/src/lib/tour.module.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/tour.service.js" afterPath="$PROJECT_DIR$/src/lib/tour.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/tour.service.js.map" afterPath="$PROJECT_DIR$/src/lib/tour.service.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -60,17 +38,17 @@
         <entry file="file://$PROJECT_DIR$/.npmignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
-              <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+              <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
-              <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+              <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -89,8 +67,28 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+            <state relative-caret-position="157">
+              <caret line="44" column="23" lean-forward="true" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tour-anchor.directive.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/tour-anchor.directive.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tour.service.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lib/tour.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="40" column="15" lean-forward="true" selection-start-line="40" selection-start-column="15" selection-end-line="40" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -128,6 +126,7 @@
       <find>hotkey</find>
       <find>hot</find>
       <find>hotke</find>
+      <find>hasnext</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,7 +145,6 @@
         <option value="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-anchor.directive.ts" />
         <option value="$PROJECT_DIR$/src/demo/docs.component.html" />
         <option value="$PROJECT_DIR$/src/demo/demo.component.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/starter.ts" />
         <option value="$PROJECT_DIR$/index.ts" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
@@ -161,6 +159,7 @@
         <option value="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.component.ts" />
         <option value="$PROJECT_DIR$/.npmignore" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -235,72 +234,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flimme-ng2-tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flimme-ng2-tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flimme-ng2-tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flimme-ng2-tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-bootstrap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flimme-ng2-tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flimme-ng2-tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -421,15 +354,15 @@
       <workItem from="1490173195613" duration="533000" />
       <workItem from="1490192105959" duration="452000" />
       <workItem from="1490272548417" duration="243000" />
-      <workItem from="1490273031962" duration="5914000" />
+      <workItem from="1490273031962" duration="7018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59178000" />
+    <option name="totallyTimeSpent" value="60282000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -476,7 +409,6 @@
         <option value="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.service.js.map" />
         <option value="$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/ng-bootstrap.module.js.map" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="E:/_praktikum/angu2/my-app/node_modules/flimme-ng2-tour/index.js" />
         <option value="$PROJECT_DIR$/src/demo/bootstrap.js.map" />
         <option value="$PROJECT_DIR$/src/demo/polyfill.js" />
         <option value="$PROJECT_DIR$/src/demo/other-route.component.js" />
@@ -605,20 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/tour.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/tour-anchor.directive.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -869,14 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/plugin/ng-bootstrap/tour-step-template.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -891,7 +801,7 @@
     <entry file="file://$PROJECT_DIR$/.npmignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
-          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -899,7 +809,31 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
-          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="44" column="23" lean-forward="true" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/tour-anchor.directive.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/tour.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="40" column="15" lean-forward="true" selection-start-line="40" selection-start-column="15" selection-end-line="40" selection-end-column="15" />
           <folding />
         </state>
       </provider>
