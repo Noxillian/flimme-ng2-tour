@@ -1,8 +1,7 @@
 webpack*
+webpack.*
 tsconfig.*
 tslint.json
-!*.d.ts
-!*.js
 *.ts
 dist
 typings

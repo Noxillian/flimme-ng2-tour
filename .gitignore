@@ -8,3 +8,6 @@ bin
 *.ngsummary.json
 .DS_Store
 *.ts
+srcsafe
+webpack.*
+webpack*
