@@ -3,6 +3,7 @@ webpack.*
 tsconfig.*
 tslint.json
 *.ts
+!*d.ts
 dist
 typings
 .idea
