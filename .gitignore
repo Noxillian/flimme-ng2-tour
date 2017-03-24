@@ -1,0 +1,10 @@
+node_modules
+build
+dist
+tmp
+bin
+.idea
+*.ngfactory.ts
+*.ngsummary.json
+.DS_Store
+*.ts
