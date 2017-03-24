@@ -1,12 +1,12 @@
-*.ts
+webpack*
+tsconfig.*
+tslint.json
 !*.d.ts
 !*.js
+*.ts
 dist
 typings
 .idea
 node_modules
-webpack*
-tsconfig.*
-tslint.json
 /bin
 demo
