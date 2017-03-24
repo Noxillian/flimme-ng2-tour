@@ -14,7 +14,7 @@ var TourStepTemplateComponent = (function () {
         { type: core_1.Component, args: [{
                     encapsulation: core_1.ViewEncapsulation.None,
                     selector: 'tour-step-template',
-                    // styleUrls: ['./tour-step-template.component.css'],
+                    styles: ['body { max-height: 100vh; }'],
                     template: "\n    <template #tourStep let-step=\"step\">\n      <p class=\"tour-step-content\">{{step?.content}}</p>\n      <div class=\"tour-step-navigation\">\n        <button *ngIf=\"tourService.hasPrev(step)\" class=\"btn btn-sm btn-default\" (click)=\"tourService.prev()\">\u00AB Prev</button>\n        <button *ngIf=\"tourService.hasNext(step)\" class=\"btn btn-sm btn-default\" (click)=\"tourService.next()\">Next \u00BB</button>\n        <button class=\"btn btn-sm btn-default\" (click)=\"tourService.end()\">End</button>\n      </div>\n    </template>\n  ",
                 },] },
     ];
