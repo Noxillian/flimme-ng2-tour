@@ -9,8 +9,10 @@ var tour_service_1 = require('../../tour.service');
 var core_1 = require('@angular/core');
 var popover_1 = require('@ng-bootstrap/ng-bootstrap/popover/popover');
 var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
-var scroll_into_view_if_needed_1 = require('scroll-into-view-if-needed');
-// const scrollIntoViewIfNeeded = require('scroll-into-view-if-needed');
+// import * as scrollIntoViewIfNeeded from 'scroll-into-view-if-needed';
+// import scrollIntoViewIfNeeded from 'scroll-into-view-if-needed';
+// import { scrollIntoViewIfNeeded } from 'scroll-into-view-if-needed';
+var scrollIntoViewIfNeeded = require('scroll-into-view-if-needed');
 var TourAnchorNgBootstrapDirective = (function (_super) {
     __extends(TourAnchorNgBootstrapDirective, _super);
     function TourAnchorNgBootstrapDirective(tourService, tourStepTemplate, _elementRef, _renderer, injector, componentFactoryResolver, viewContainerRef, config, ngZone) {
@@ -68,7 +70,8 @@ var TourAnchorNgBootstrapDirective = (function (_super) {
         }
         this.open({ step: step });
         if (!step.preventScrolling) {
-            scroll_into_view_if_needed_1.default(this.element.nativeElement, true);
+            //console.log(scrollIntoViewIfNeeded)
+            scrollIntoViewIfNeeded(this.element.nativeElement, true);
         }
         /** display switch */
         switch (step.display) {
