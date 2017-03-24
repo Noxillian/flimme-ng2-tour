@@ -4,21 +4,13 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 var tour_step_template_service_1 = require('./tour-step-template.service');
 var tour_service_1 = require('../../tour.service');
 var core_1 = require('@angular/core');
 var popover_1 = require('@ng-bootstrap/ng-bootstrap/popover/popover');
 var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
 var scroll_into_view_if_needed_1 = require('scroll-into-view-if-needed');
+// const scrollIntoViewIfNeeded = require('scroll-into-view-if-needed');
 var TourAnchorNgBootstrapDirective = (function (_super) {
     __extends(TourAnchorNgBootstrapDirective, _super);
     function TourAnchorNgBootstrapDirective(tourService, tourStepTemplate, _elementRef, _renderer, injector, componentFactoryResolver, viewContainerRef, config, ngZone) {
@@ -29,6 +21,7 @@ var TourAnchorNgBootstrapDirective = (function (_super) {
         this.hasMask = false;
         this.element = _elementRef;
         this.oldstyle = this.element.nativeElement.style;
+        /** This seems to fix the width resizing bug */
         window.onresize = function () {
             ngZone.run(function () {
                 console.log("mask: ", _this.mask_top);
@@ -46,11 +39,15 @@ var TourAnchorNgBootstrapDirective = (function (_super) {
         this.tourService.register(this.tourAnchor, this);
     };
     TourAnchorNgBootstrapDirective.prototype.ngOnDestroy = function () {
+        // if (this.hasMask){
+        //   this.destroy_masks();
+        // }
         this.tourService.unregister(this.tourAnchor);
     };
     TourAnchorNgBootstrapDirective.prototype.showTourStep = function (step) {
         this.ngbPopover = this.tourStepTemplate.template;
         this.popoverTitle = step.title;
+        /** placement switch */
         switch (step.placement) {
             case 'above':
                 this.placement = 'top';
@@ -73,6 +70,7 @@ var TourAnchorNgBootstrapDirective = (function (_super) {
         if (!step.preventScrolling) {
             scroll_into_view_if_needed_1.default(this.element.nativeElement, true);
         }
+        /** display switch */
         switch (step.display) {
             case 'highlight':
                 this.element.nativeElement.style.boxShadow = "2px 2px 10px 10px rgba(255, 56, 93, 0.5)";
@@ -85,6 +83,7 @@ var TourAnchorNgBootstrapDirective = (function (_super) {
                 this.element.nativeElement.style.textDecoration = "underline";
                 break;
         }
+        /** arrow */
         this.create_arrow(step.arrow);
     };
     TourAnchorNgBootstrapDirective.prototype.hideTourStep = function () {
@@ -134,7 +133,7 @@ var TourAnchorNgBootstrapDirective = (function (_super) {
         var bottomheight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
         this.mask_bottom = document.createElement("div");
         this.mask_bottom.style.width = "100vw";
-        this.mask_bottom.style.height = bottomheight + "px";
+        this.mask_bottom.style.height = bottomheight + "px"; //"100vh";
         this.mask_bottom.style.top = rect.bottom + "px";
         this.mask_bottom.style.left = "0";
         this.mask_bottom.style.background = "rgba(0,0,0,0.75)";
@@ -153,21 +152,32 @@ var TourAnchorNgBootstrapDirective = (function (_super) {
         this.mask_right.style.left = rect.right + "px";
         this.mask_right.style.background = "rgba(0,0,0,0.75)";
         this.mask_right.style.position = "absolute";
+        /** Add masks to document */
         document.body.appendChild(this.mask_top);
         document.body.appendChild(this.mask_bottom);
         document.body.appendChild(this.mask_left);
         document.body.appendChild(this.mask_right);
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], TourAnchorNgBootstrapDirective.prototype, "tourAnchor", void 0);
-    TourAnchorNgBootstrapDirective = __decorate([
-        core_1.Directive({
-            selector: '[tourAnchor]',
-        }), 
-        __metadata('design:paramtypes', [tour_service_1.TourService, tour_step_template_service_1.TourStepTemplateService, core_1.ElementRef, core_1.Renderer, core_1.Injector, core_1.ComponentFactoryResolver, core_1.ViewContainerRef, ng_bootstrap_1.NgbPopoverConfig, core_1.NgZone])
-    ], TourAnchorNgBootstrapDirective);
+    TourAnchorNgBootstrapDirective.decorators = [
+        { type: core_1.Directive, args: [{
+                    selector: '[tourAnchor]',
+                },] },
+    ];
+    /** @nocollapse */
+    TourAnchorNgBootstrapDirective.ctorParameters = function () { return [
+        { type: tour_service_1.TourService, },
+        { type: tour_step_template_service_1.TourStepTemplateService, },
+        { type: core_1.ElementRef, },
+        { type: core_1.Renderer, },
+        { type: core_1.Injector, },
+        { type: core_1.ComponentFactoryResolver, },
+        { type: core_1.ViewContainerRef, },
+        { type: ng_bootstrap_1.NgbPopoverConfig, },
+        { type: core_1.NgZone, },
+    ]; };
+    TourAnchorNgBootstrapDirective.propDecorators = {
+        'tourAnchor': [{ type: core_1.Input },],
+    };
     return TourAnchorNgBootstrapDirective;
 }(popover_1.NgbPopover));
 exports.TourAnchorNgBootstrapDirective = TourAnchorNgBootstrapDirective;

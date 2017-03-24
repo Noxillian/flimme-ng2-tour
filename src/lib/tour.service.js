@@ -1,13 +1,5 @@
 "use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
+// import { IStepOption } from './tour.service';
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var Subject_1 = require('rxjs/Subject');
@@ -20,6 +12,30 @@ var map_1 = require('rxjs/operator/map');
 })(exports.TourState || (exports.TourState = {}));
 var TourState = exports.TourState;
 var TourService = (function () {
+    // private hotkeys: Hotkey[] = [new Hotkey(
+    //   'esc',
+    //   event => {
+    //     this.end();
+    //     return true;
+    //   },
+    // ), new Hotkey(
+    //   'right',
+    //   event => {
+    //     if (this.hasNext(this.currentStep)) {
+    //       this.next();
+    //     }
+    //     return true;
+    //   },
+    // ), new Hotkey(
+    //   'left',
+    //   event => {
+    //     if (this.hasPrev(this.currentStep)) {
+    //       this.prev();
+    //     }
+    //     return true;
+    //   },
+    // )];
+    // constructor(private router: Router, private hotkeyService: HotkeysService) { }
     function TourService(router) {
         this.router = router;
         this.stepShow$ = new Subject_1.Subject();
@@ -49,22 +65,26 @@ var TourService = (function () {
         this.goToStep(this.loadStep(stepId));
         this.start$.next();
         this.status = TourState.ON;
+        // this.setHotkeys();
     };
     TourService.prototype.end = function () {
         this.hideStep(this.currentStep);
         this.currentStep = undefined;
         this.end$.next();
         this.status = TourState.OFF;
+        // this.removeHotkeys();
     };
     TourService.prototype.pause = function () {
         this.hideStep(this.currentStep);
         this.pause$.next();
         this.status = TourState.PAUSED;
+        // this.setHotkeys();
     };
     TourService.prototype.resume = function () {
         this.showStep(this.currentStep);
         this.resume$.next();
         this.status = TourState.ON;
+        // this.removeHotkeys();
     };
     TourService.prototype.toggle = function (pause) {
         if (pause) {
@@ -110,6 +130,16 @@ var TourService = (function () {
         delete this.anchors[anchorId];
         this.anchorUnregister$.next(anchorId);
     };
+    /**
+     * Configures hot keys for controlling the tour with the keyboard
+     */
+    // private setHotkeys(): void {
+    //   this.hotkeyService.add(this.hotkeys);
+    // }
+    //
+    // private removeHotkeys(): void {
+    //   this.hotkeyService.remove(this.hotkeys);
+    // }
     TourService.prototype.goToStep = function (step) {
         var _this = this;
         if (!step) {
@@ -161,10 +191,13 @@ var TourService = (function () {
         anchor.hideTourStep();
         this.stepHide$.next(step);
     };
-    TourService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [router_1.Router])
-    ], TourService);
+    TourService.decorators = [
+        { type: core_1.Injectable },
+    ];
+    /** @nocollapse */
+    TourService.ctorParameters = function () { return [
+        { type: router_1.Router, },
+    ]; };
     return TourService;
 }());
 exports.TourService = TourService;
